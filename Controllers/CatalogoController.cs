@@ -21,9 +21,12 @@ namespace SistemaVen.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? searchString)
         {
             var catalogos = from o in _context.DataCatalogos select o;
+            if(!String.IsNullOrEmpty(searchString)){
+                catalogos = catalogos.Where(s => s.Nombre.Contains(searchString));
+            }
             return View(await catalogos.ToListAsync());
         }
 
