@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\SistemaVen.csproj": {}
+    "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj": {}
   },
   "projects": {
-    "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\SistemaVen.csproj": {
+    "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\SistemaVen.csproj",
+        "projectUniqueName": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj",
         "projectName": "SistemaVen",
-        "projectPath": "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\SistemaVen.csproj",
+        "projectPath": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\obj\\",
+        "outputPath": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"

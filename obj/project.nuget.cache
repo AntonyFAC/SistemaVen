@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CRpEZmf/uSp9huWsozewtOQMETjIp9PXM1CoWY4/cHp6xRkWRptBu0rfxYdZlYM0O3wQshODSF7Rk2qDOZheZg==",
+  "dgSpecHash": "y8nnnPx3qL+1reT9/9HL7Q5R/gO6jqVgsxP89LR+SVVeaWGKZbz/AJiPlNOROxYAN1KgvHdsH2WHBECqRhNbmA==",
   "success": true,
-  "projectFilePath": "D:\\2022\\PROGRAMACION\\CODE\\SistemaVen\\SistemaVen.csproj",
+  "projectFilePath": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
