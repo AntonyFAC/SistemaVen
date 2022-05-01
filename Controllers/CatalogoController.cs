@@ -27,6 +27,15 @@ namespace SistemaVen.Controllers
             return View(await catalogos.ToListAsync());
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            Catalogo objCatalog = await _context.DataCatalogos.FindAsync(id);
+            if(objCatalog == null){
+                return NotFound();
+            }
+            return View(objCatalog);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

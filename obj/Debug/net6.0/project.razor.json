@@ -16371,6 +16371,11 @@
       "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\Views\\Catalogo\\Details.cshtml",
+      "TargetPath": "Views\\Catalogo\\Details.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
