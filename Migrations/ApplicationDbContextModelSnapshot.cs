@@ -246,6 +246,10 @@ namespace SistemaVen.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("numeric");
 
+                    b.Property<string>("Talla")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("t_catalogo");
