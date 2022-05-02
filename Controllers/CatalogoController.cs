@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaVen.Models;
 using SistemaVen.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+
 namespace SistemaVen.Controllers
 {
 
@@ -13,12 +15,15 @@ namespace SistemaVen.Controllers
     {
         private readonly ILogger<CatalogoController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
         public CatalogoController(ApplicationDbContext context,
-            ILogger<CatalogoController> logger)
+            ILogger<CatalogoController> logger,
+            UserManager<IdentityUser> userManager)
         {
             _logger = logger;
             _context = context;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index(string? searchString)
@@ -39,10 +44,24 @@ namespace SistemaVen.Controllers
             return View(objCatalog);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
+        public async Task<IActionResult> Add(int? id){
+            var userID = _userManager.GetUserName(User);
+            if(userID == null){
+                ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
+                List<Catalogo> catalogos = new List<Catalogo>();
+                return View("Index", catalogos);
+            }else{
+                var catalogo = await _context.DataCatalogos.FindAsync(id);
+                Proforma proforma = new Proforma();
+                proforma.Producto = catalogo;
+                proforma.Precio = catalogo.Precio;
+                proforma.Cantidad = 1;
+                proforma.UserID = userID;
+                _context.Add(proforma);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+
+            }
         }
     }
 }
