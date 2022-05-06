@@ -10208,11 +10208,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj",
+      "projectUniqueName": "D:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\SistemaVen.csproj",
       "projectName": "SistemaVen",
-      "projectPath": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\SistemaVen.csproj",
+      "projectPath": "D:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\SistemaVen.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\2022\\PROGRAMACION\\CODE\\6\\SistemaVen\\obj\\",
+      "outputPath": "D:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"

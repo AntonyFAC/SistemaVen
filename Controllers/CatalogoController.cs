@@ -7,6 +7,9 @@ using SistemaVen.Models;
 using SistemaVen.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using SistemaVen.util;
+using Microsoft.AspNetCore.Http;
+
 
 namespace SistemaVen.Controllers
 {
@@ -60,7 +63,6 @@ namespace SistemaVen.Controllers
                 _context.Add(proforma);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-
             }
         }
     }

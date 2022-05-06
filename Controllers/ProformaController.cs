@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Dynamic;
 using Microsoft.EntityFrameworkCore;
+using SistemaVen.util;
+
 
 
 namespace SistemaVen.Controllers
@@ -32,19 +34,20 @@ namespace SistemaVen.Controllers
         }
 
         public async Task<IActionResult> Index(){
-           var UserID = _userManager.GetUserName(User);
+           var userID = _userManager.GetUserName(User);
            var items = from o in _context.DataProforma select o;
            items = items.
                 Include(p => p.Producto).
-                where(w => w.UserID.Equals(userID) && w.Status.Equals("PENDIENTE"));
+                Where(w => w.UserID.Equals(userID) && w.Status.Equals("PENDIENTE"));
             
             var carrito = await items.ToListAsync();
-            var total = carrito.Sum(c => c.Cantidad*c.Precio);
+            var total = carrito.Sum(c => c.Cantidad * c.Precio);
 
             dynamic model = new ExpandoObject();
+            model.montoTotal = total;
             model.elementosCarrito = carrito;
 
-            return null;
+            return View(model);
 
         }
 
