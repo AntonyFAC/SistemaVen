@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaVen.Models
 {
@@ -23,5 +25,5 @@ namespace SistemaVen.Models
         public Decimal MontoTotal{ get; set; }
         public String UserID{ get; set; }
   
-    
+    }
 }
