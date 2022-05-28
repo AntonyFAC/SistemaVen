@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Pago\\Create.cshtml",
+      "TargetPath": "Views\\Pago\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"

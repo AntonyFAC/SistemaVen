@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaVen.Data;
@@ -11,9 +12,10 @@ using SistemaVen.Data;
 namespace SistemaVen.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220527235818_Pago")]
+    partial class Pago
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -255,36 +257,6 @@ namespace SistemaVen.Migrations
                     b.ToTable("t_catalogo");
                 });
 
-            modelBuilder.Entity("SistemaVen.Models.DetallePedido", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("integer");
-
-                    b.Property<decimal>("Precio")
-                        .HasColumnType("numeric");
-
-                    b.Property<int>("ProductoId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("pedidoID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ProductoId");
-
-                    b.HasIndex("pedidoID");
-
-                    b.ToTable("t_order_detail");
-                });
-
             modelBuilder.Entity("SistemaVen.Models.Pago", b =>
                 {
                     b.Property<int>("Id")
@@ -315,36 +287,6 @@ namespace SistemaVen.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("t_pago");
-                });
-
-            modelBuilder.Entity("SistemaVen.Models.Pedido", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("UserID")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("pagoId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("pagoId");
-
-                    b.ToTable("t_order");
                 });
 
             modelBuilder.Entity("SistemaVen.Models.Proforma", b =>
@@ -429,36 +371,6 @@ namespace SistemaVen.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SistemaVen.Models.DetallePedido", b =>
-                {
-                    b.HasOne("SistemaVen.Models.Catalogo", "Producto")
-                        .WithMany()
-                        .HasForeignKey("ProductoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SistemaVen.Models.Pedido", "pedido")
-                        .WithMany()
-                        .HasForeignKey("pedidoID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Producto");
-
-                    b.Navigation("pedido");
-                });
-
-            modelBuilder.Entity("SistemaVen.Models.Pedido", b =>
-                {
-                    b.HasOne("SistemaVen.Models.Pago", "pago")
-                        .WithMany()
-                        .HasForeignKey("pagoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("pago");
                 });
 
             modelBuilder.Entity("SistemaVen.Models.Proforma", b =>

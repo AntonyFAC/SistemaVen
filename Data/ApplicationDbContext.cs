@@ -14,4 +14,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<SistemaVen.Models.Proforma> DataProforma { get; set; }
 
     public DbSet<SistemaVen.Models.Pago> DataPago {get; set;}
+    public DbSet<SistemaVen.Models.Pedido> DataPedido {get; set;}
+    public DbSet<SistemaVen.Models.DetallePedido> DataDetallePedido {get; set;}
 }
