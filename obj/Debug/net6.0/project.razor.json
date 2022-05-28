@@ -16313,8 +16313,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Producto\\Index.cshtml",
+      "TargetPath": "Views\\Producto\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Producto\\Details.cshtml",
+      "TargetPath": "Views\\Producto\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16343,8 +16353,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Shared\\_MenuPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_MenuPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Producto\\Edit.cshtml",
+      "TargetPath": "Views\\Producto\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Producto\\Create.cshtml",
+      "TargetPath": "Views\\Producto\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16370,6 +16395,11 @@
     {
       "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\2022\\PROGRAMACION\\CODE\\9\\SistemaVen\\Views\\Producto\\Delete.cshtml",
+      "TargetPath": "Views\\Producto\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
