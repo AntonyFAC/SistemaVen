@@ -2,63 +2,105 @@
 @{
     ViewData["Title"] = "Pago";
 }
-
 <h1>@ViewData["Title"]</h1>
 
-    <div class="container">
+<body>
+	<div class="contenedor">
+		<!-- Tarjeta -->
+		<section class="tarjeta" id="tarjeta">
+			<div class="delantera">
+				<div class="logo-marca" id="logo-marca">
+					
+				</div>
+				<img src="/img/chip-tarjeta.png" class="chip" alt="">
+				<div class="datos">
+					<div class="grupo" id="numero">
+						<p class="label">Número Tarjeta</p>
+						<p class="numero">#### #### #### ####</p>
+					</div>
+					<div class="flexbox">
+						<div class="grupo" id="nombre">
+							<p class="label">Nombre Tarjeta</p>
+							<p class="nombre">Tienda</p>
+						</div>
 
-        <div class="row">
-          <div class="col-sm-10 mt-5">
-           <form asp-controller="Pago" asp-action="Pagar">
-              <div class="form-group row">
-                <input type="hidden" asp-for="UserID"/>
-                <div class="col-sm-2">
-                  <label asp-for="NombreTarjeta" class="control-label"></label>
-                </div>
-                <div class="col-sm-2">
-                  <input asp-for="NombreTarjeta" class="form-control" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label asp-for="NumeroTarjeta" class="control-label"></label>
-                </div>
-                <div class="col-sm-2">
-                  <input asp-for="NumeroTarjeta" class="form-control" data-inputmask="'mask': '9999-9999-9999-9999'" />
-                </div>
-              </div>              
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label asp-for="DueDateYYMM" class="control-label"></label>
-                </div>
-                <div class="col-sm-2">
-                  <input asp-for="DueDateYYMM" class="form-control" data-inputmask="'mask': '99/99', 'placeholder': 'yy/mm'" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label asp-for="Cvv" class="control-label"></label>
-                </div>
-                <div class="col-sm-2">
-                  <input asp-for="Cvv" class="form-control" data-inputmask="'mask': '999', 'placeholder': '999'" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label asp-for="MontoTotal" class="control-label"></label>
-                </div>
-                <div class="col-sm-2">
-                  <input asp-for="MontoTotal" class="form-control" data-thousands="," data-decimal="." />
-                </div>
-              </div>  
-              <div class="form-group row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary">Pagar</button> 
-                </div>
-              </div>
-            </form>
-            <h1>@ViewData["Message"]</h1>
-          </div>
-        </div>
-    </div
+						<div class="grupo" id="expiracion">
+							<p class="label">Expiracion</p>
+							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="trasera">
+				<div class="barra-magnetica"></div>
+				<div class="datos">
+					<div class="grupo" id="firma">
+						<p class="label">Firma</p>
+						<div class="firma"><p></p></div>
+					</div>
+					<div class="grupo" id="ccv">
+						<p class="label">CCV</p>
+						<p class="ccv"></p>
+					</div>
+				</div>
+        <br>
+				<p class="leyenda">Los datos ingresados, deben esta acorde a su tarjeta fisica. El uso de su información es con fines de pago y no uso de terceros</p>
+        <br>
+        <br>
+				<a href="#" class="link-banco">app-empresaqbe.herokuapp.com</a>
+			</div>
+		</section>
+
+		<!-- Contenedor Boton Abrir Formulario -->
+		<div class="contenedor-btn">
+			<button class="btn-abrir-formulario" id="btn-abrir-formulario">
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+
+		<h1 style="text-center ">@ViewData["Message"]</h1>
+		<!-- Formulario -->
+    <form asp-controller="Pago" asp-action="Pagar" id="formulario-tarjeta" class="formulario-tarjeta">
+			<div class="grupo">
+				<label asp-for="MontoTotal" class="control-label text-center">MONTO TOTAL</label>
+				<input asp-for="MontoTotal" class="form-control text-center" data-thousands="," data-decimal="." disabled>
+				<input type="hidden" asp-for="MontoTotal">	
+			</div>
+			<div class="grupo">
+				<label asp-for="NumeroTarjeta" class="control-label" for="inputNumero">Número Tarjeta</label>
+				<input asp-for="NumeroTarjeta" class="form-control" type="text" id="inputNumero" maxlength="19" autocomplete="off">
+			</div>
+			<div class="grupo">
+        		<input type="hidden" asp-for="UserID"/>
+				<label asp-for="NombreTarjeta" for="inputNombre" class="control-label">Nombre</label>
+				<input asp-for="NombreTarjeta" class="form-control" type="text" id="inputNombre" maxlength="19" autocomplete="off">
+			</div>
+			<div class="flexbox">
+				<div class="grupo expira">
+					<label asp-for="DueDateYYMM" class="control-label" for="selectMes">Expiracion</label>
+					<div class="flexbox">
+							<div class="grupo-select">
+								<select name="mes" id="selectMes">
+									<option asp-for="DueDateYYMM" class="form-control" disabled selected>Mes</option>
+								</select>
+								<i class="fas fa-angle-down"></i>
+							</div>
+							<div class="grupo-select">
+								<select name="year" id="selectYear">
+									<option asp-for="DueDateYYMM" class="form-control" disabled selected>Año</option>
+								</select>
+								<i class="fas fa-angle-down"></i>
+							</div>
+						</input>
+					</div>
+				</div>
+				<div class="grupo ccv">
+					<label asp-for="Cvv" class="control-label" for="inputCCV">CCV</label>
+					<input asp-for="Cvv" class="form-control" type="text" id="inputCCV" maxlength="3">
+				</div> 
+			</div>
+			<button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+	</div>
+</body>

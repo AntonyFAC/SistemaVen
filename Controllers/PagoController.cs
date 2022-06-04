@@ -68,7 +68,7 @@ namespace SistemaVen.Controllers
 
             _context.SaveChanges();
 
-            ViewData["Message"] = "El pago se ha registrado";
+            ViewData["Message"] = "Su Pago fue Enviado";
             return View("Create");
         }
 
